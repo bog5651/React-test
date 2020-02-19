@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Switch, Route, Redirect, Link} from 'react-router-dom';
+import {Switch, Route, Redirect, Link, NavLink} from 'react-router-dom';
 
 import TODO from './Pages/Home'
 import NOTFOUND from './Pages/NotFound'
@@ -12,8 +12,8 @@ const App = () => {
             <header className="App-header">
                 <div className='myEbala'>KAkayata shlyapa</div>
                 <nav>
-                    <Link to="/weather">Погода</Link>
-                    <Link to="/todos">Тудушки</Link>
+                    <NavLink activeClassName="activeNavLink" ac className="inactiveNavLink" to="/weather">Погода</NavLink>
+                    <NavLink activeClassName="activeNavLink" className="inactiveNavLink" to="/todos">Тудушки</NavLink>
                 </nav>
             </header>
             <div className='App'>
