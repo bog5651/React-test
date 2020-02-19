@@ -1,56 +1,31 @@
 import React from 'react';
-import logo2 from './logo.svg';
 import './App.css';
-import Todolist from "./Todo/Todolist";
+import {Switch, Route, Redirect, Link} from 'react-router-dom';
 
-interface Item {
-    name: string,
-    status: boolean,
-    id: number
-}
+import TODO from './Pages/Home'
+import NOTFOUND from './Pages/NotFound'
+import Weather from "./Pages/Weather";
 
 const App = () => {
-    const [todos, setTodos] = React.useState(
-        [{
-            name: "епта рас",
-            status: false,
-            id: 1
-        }, {
-            name: "епта двас",
-            status: false,
-            id: 2
-        }, {
-            name: "епта трис",
-            status: false,
-            id: 3
-        }, {
-            name: "епта ы",
-            status: false,
-            id: 4
-        }]
-    );
-
     return (
-        <div className="App">
+        <div>
             <header className="App-header">
-                <img src={logo2} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <div className='myEbala'>some text</div>
-                <h1>my super text</h1>\
+                <div className='myEbala'>KAkayata shlyapa</div>
+                <nav>
+                    <Link to="/weather">Погода</Link>
+                    <Link to="/todos">Тудушки</Link>
+                </nav>
             </header>
-            <Todolist todos={todos} onClickItem={(id: number) => {
-                setTodos(
-                    todos.map((item: Item) => {
-                        if (item.id === id)
-                            item.status = !item.status;
-                        return item
-                    })
-                )
-            }}/>
+            <div className='App'>
+                <Switch>
+                    <Route exact path='/todos' render={() => <TODO/>}/>
+                    <Route exact path='/404' render={() => <NOTFOUND/>}/>
+                    <Route exact path='/weather' render={() => <Weather/>}/>
+                    <Redirect from='/' to='/404'/>
+                </Switch>
+            </div>
         </div>
     );
-};
+}
 
 export default App;

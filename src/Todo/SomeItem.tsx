@@ -13,4 +13,4 @@ export default function SomeItem(props: any) {
             </li>
         </span>
     )
-}
+};
