@@ -7,7 +7,7 @@ interface Item {
     id: number
 }
 
-const TODO = () => {
+const Todos = () => {
     const [todos, setTodos] = React.useState<Array<Item>>(
         [{
             name: "епта рас",
@@ -43,4 +43,4 @@ const TODO = () => {
     );
 };
 
-export default TODO;
+export default Todos;

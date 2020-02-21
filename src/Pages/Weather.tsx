@@ -14,7 +14,7 @@ const Weather = () => {
     *
     */
 
-    const [weather, setWeather] = React.useState<WeatherItem | undefined>( undefined);
+    const [weather, setWeather] = React.useState<WeatherItem | undefined>(undefined);
 
     function getWeather(sityName: string) {
         fetch("http://api.openweathermap.org/data/2.5/weather?q=".concat(sityName).concat("&appid=f86628d4407790e972163f4c9a8d3513"))
@@ -40,7 +40,7 @@ const Weather = () => {
                 }}/>
             </form>
             <div>
-                {weather?(
+                {weather ? (
                     <p>
                         В
                         городе {weather?.sityName} сейчас {weather?.temp.toLocaleString(
@@ -51,7 +51,7 @@ const Weather = () => {
                         }
                     )}
                     </p>
-                ):(
+                ) : (
                     <p>
                         Такой город не найден
                     </p>

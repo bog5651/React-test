@@ -22,9 +22,9 @@ nav > * {
 }
 
 .activeNavLink {
-    color: red;
+    color: red !important;
 }
 
-.inactiveNavLink {
+.inactiveNavLink > * {
     color: white;
 }
