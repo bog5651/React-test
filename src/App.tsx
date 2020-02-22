@@ -8,13 +8,14 @@ import Weather from "./Pages/Weather";
 
 import {UserContext} from "./context";
 import UserStuff from "./Pages/UserStuff";
+import Chat from "./Pages/Chat";
 
 const App = () => {
 
     // let userData = {};
     const [userData, setUserData] = React.useState({});
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
         fetch("https://randomuser.me/api/")
             .then(value => value.json())
             .then(value => {
@@ -23,12 +24,14 @@ const App = () => {
                 setUserData(value.results[0]);
             });
     }, []);
-    
+
     return (
         <div>
             <header className="App-header">
                 <div className='myEbala'>KAkayata shlyapa</div>
                 <nav>
+                    <NavLink activeClassName="activeNavLink" className="inactiveNavLink"
+                             to="/chat">Чат</NavLink>
                     <NavLink activeClassName="activeNavLink" className="inactiveNavLink"
                              to="/weather">Погода</NavLink>
                     <NavLink activeClassName="activeNavLink" className="inactiveNavLink"
@@ -40,7 +43,8 @@ const App = () => {
             </header>
             <div className='App'>
                 <Switch>
-                    <Route exact path='/todos' render={() => <TODO/>}/>
+                    <Route exact path='/todos'  render={() => <TODO/>}/>
+                    <Route exact path='/chat' component={Chat}/>
                     <Route exact path='/404' render={() => <NOTFOUND/>}/>
                     <Route exact path='/weather' render={() => <Weather/>}/>
                     <Redirect from='/' to='/404'/>

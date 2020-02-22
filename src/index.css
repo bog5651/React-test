@@ -28,3 +28,37 @@ nav > * {
 .inactiveNavLink {
     color: white;
 }
+
+.chatBox {
+    border-color: #282c34;
+    border-style: solid;
+}
+
+.editTextMessage {
+    margin-left: auto;
+    text-align: right !important;
+    width: 50%;
+}
+
+.inputMessage {
+    width: 90%;
+    margin-right: 5px;
+}
+
+.messages {
+    width: 100%;
+    max-height: 400px;
+    margin-top: 40px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.myMessage {
+    text-align: right !important;
+    margin-right: 15px;
+}
+
+.otherMessage {
+    text-align: left !important;
+    margin-left: 15px;
+}
