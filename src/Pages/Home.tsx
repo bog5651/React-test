@@ -10,19 +10,19 @@ interface Item {
 const Todos = () => {
     const [todos, setTodos] = React.useState<Array<Item>>(
         [{
-            name: "епта рас",
+            name: "Не ловить маслину",
             status: false,
             id: 1
         }, {
-            name: "епта двас",
+            name: "Сбоку заходить",
             status: false,
             id: 2
         }, {
-            name: "епта трис",
+            name: "Обходить эту шелупонь",
             status: false,
             id: 3
         }, {
-            name: "епта ы",
+            name: "Не светить валыной",
             status: false,
             id: 4
         }]

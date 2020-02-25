@@ -1,4 +1,5 @@
 import React from "react";
+import {getWeather} from "../Utils";
 
 interface WeatherItem {
     temp: number;
@@ -16,27 +17,26 @@ const Weather = () => {
 
     const [weather, setWeather] = React.useState<WeatherItem | undefined>(undefined);
 
-    function getWeather(sityName: string) {
-        fetch("http://api.openweathermap.org/data/2.5/weather?q=".concat(sityName).concat("&appid=f86628d4407790e972163f4c9a8d3513"))
-            .then((value => value.json()))
-            .then((weather: any) => {
+    function updateWeather(sityName: string) {
+        getWeather(sityName, (result, error) => {
+            if (error) {
+                console.log("error request/" + error);
+                setWeather(undefined);
+            } else {
                 const newWeather: WeatherItem = {
-                    sityName: weather.name,
-                    temp: (fromKelvin(weather.main.temp))
+                    sityName: result.name,
+                    temp: (fromKelvin(result.main.temp))
                 };
                 setWeather(newWeather);
-            })
-            .catch(reason => {
-                console.log("error request/" + reason);
-                setWeather(undefined);
-            })
+            }
+        });
     }
 
     return (
         <div>
             <form>
                 <input onChange={(event) => {
-                    getWeather(event.target.value);
+                    updateWeather(event.target.value);
                 }}/>
             </form>
             <div>

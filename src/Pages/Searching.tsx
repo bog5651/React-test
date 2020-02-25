@@ -22,14 +22,19 @@ const Searching = (props: any) => {
 
     return (
         <div>
-            <input placeholder="Типа поисковик, сюда текст дал, епта" onChange={event => search(event.target.value)}/>
+            <input placeholder="Типа поисковик" onChange={event => search(event.target.value)}/>
             <table>
                 <tbody>
-                {data.map((item: any) => {
-                    if (item.hasOwnProperty('searchText') && item.filtered) {
-                        return (<tr key={item.id}>{item.searchText}</tr>)
-                    }
-                })}
+                {
+                    data.map((item: any) => {
+                        if (item.hasOwnProperty('searchText') && item.filtered) {
+                            return (<tr key={item.id}>
+                                <td>{item.searchText}</td>
+                            </tr>);
+                        } else
+                            return ('');
+                    })
+                }
                 </tbody>
             </table>
         </div>
