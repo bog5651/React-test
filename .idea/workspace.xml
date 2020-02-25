@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62a5220e-a25b-4cb0-a099-5d221b0f470c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Utils.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Searching.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Searching.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/UserStuff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/UserStuff.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Weather.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Weather.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +31,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v12.13.1-win-x64/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -126,30 +125,35 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="724" y="310" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582264449104" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1582085641280">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1582642330227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582085641280" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582642330227" />
     <state x="583" y="28" key="CommitChangelistDialog2" timestamp="1581578482606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="583" y="28" key="CommitChangelistDialog2/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581578482606" />
-    <state width="1899" height="230" key="GridCell.Tab.0.bottom" timestamp="1582623931052">
+    <state width="1899" height="287" key="GridCell.Tab.0.bottom" timestamp="1582643910709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="230" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582623931052" />
-    <state width="1899" height="230" key="GridCell.Tab.0.center" timestamp="1582623931052">
+    <state width="1899" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582643910709" />
+    <state width="1899" height="287" key="GridCell.Tab.0.center" timestamp="1582643910708">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="230" key="GridCell.Tab.0.center/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582623931052" />
-    <state width="1899" height="230" key="GridCell.Tab.0.left" timestamp="1582623931052">
+    <state width="1899" height="287" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582643910708" />
+    <state width="1899" height="287" key="GridCell.Tab.0.left" timestamp="1582643910708">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="230" key="GridCell.Tab.0.left/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582623931052" />
-    <state width="1899" height="230" key="GridCell.Tab.0.right" timestamp="1582623931052">
+    <state width="1899" height="287" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582643910708" />
+    <state width="1899" height="287" key="GridCell.Tab.0.right" timestamp="1582643910709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="230" key="GridCell.Tab.0.right/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582623931052" />
+    <state width="1899" height="287" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582643910709" />
     <state width="1899" height="326" key="GridCell.Tab.1.bottom" timestamp="1582090622041">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -206,5 +210,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="767" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581578394053" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1582643271351">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582643271351" />
   </component>
 </project>

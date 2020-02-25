@@ -31,37 +31,39 @@ const App = () => {
             id: 4
         }];
 
-        const [userData, setUserData] = React.useState({});
+        const [userData, setUserData] = React.useState({name: {first: "defVal", last: "defLast"}});
 
         React.useEffect(() => getUser((result) => {
             if (result)
                 setUserData(result.results[0]);
         }), []);
         return (
-            <div>
-                <header className="App-header">
-                    <div className='myEbala'>KAkayata shlyapa</div>
-                    <nav className="inactiveNavLink">
-                        <NavLink activeClassName="activeNavLink" to="/chat">Чат</NavLink>
-                        <NavLink activeClassName="activeNavLink" to="/weather">Погода</NavLink>
-                        <NavLink activeClassName="activeNavLink" to="/todos">Тудушки</NavLink>
-                        <NavLink activeClassName="activeNavLink" to="/search">Поиск</NavLink>
-                    </nav>
-                    <UserContext.Provider value={userData}>
+            <UserContext.Provider value={userData}>
+                <div>
+                    <header className="App-header">
+                        <div className='myEbala'>KAkayata shlyapa</div>
+                        <nav className="inactiveNavLink">
+                            <NavLink activeClassName="activeNavLink" to="/chatUser">Чат</NavLink>
+                            <NavLink activeClassName="activeNavLink" to="/chatDispatcher">Чат Д</NavLink>
+                            <NavLink activeClassName="activeNavLink" to="/weather">Погода</NavLink>
+                            <NavLink activeClassName="activeNavLink" to="/todos">Тудушки</NavLink>
+                            <NavLink activeClassName="activeNavLink" to="/search">Поиск</NavLink>
+                        </nav>
                         <UserStuff/>
-                    </UserContext.Provider>
-                </header>
-                <div className='App'>
-                    <Switch>
-                        <Route exact path='/chat' component={Chat}/>
-                        <Route exact path='/todos' render={() => <Todos/>}/>
-                        <Route exact path='/404' render={() => <NotFound/>}/>
-                        <Route exact path='/weather' render={() => <Weather/>}/>
-                        <Route exact path='/search' render={() => <Searching data={sortingData}/>}/>
-                        <Redirect from='/' to='/404'/>
-                    </Switch>
+                    </header>
+                    <div className='App'>
+                        <Switch>
+                            <Route exact path='/chatUser' component={() => <Chat role="USER"/>}/>
+                            <Route exact path='/chatDispatcher' component={() => <Chat role="DISPATCHER"/>}/>
+                            <Route exact path='/todos' render={() => <Todos/>}/>
+                            <Route exact path='/404' render={() => <NotFound/>}/>
+                            <Route exact path='/weather' render={() => <Weather/>}/>
+                            <Route exact path='/search' render={() => <Searching data={sortingData}/>}/>
+                            <Redirect from='/' to='/404'/>
+                        </Switch>
+                    </div>
                 </div>
-            </div>
+            </UserContext.Provider>
         );
     }
 ;
