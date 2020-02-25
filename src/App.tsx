@@ -6,24 +6,14 @@ import TODO from './Pages/Home'
 import NOTFOUND from './Pages/NotFound'
 import Weather from "./Pages/Weather";
 
+import {getUser} from './Utils'
 import {UserContext} from "./context";
 import UserStuff from "./Pages/UserStuff";
 
 const App = () => {
-
-    // let userData = {};
     const [userData, setUserData] = React.useState({});
 
-    React.useEffect(()=>{
-        fetch("https://randomuser.me/api/")
-            .then(value => value.json())
-            .then(value => {
-                console.log("user loaded");
-                // userData = value.results[0];
-                setUserData(value.results[0]);
-            });
-    }, []);
-    
+    React.useEffect(() => getUser((result => setUserData(result.results[0]))), []);
     return (
         <div>
             <header className="App-header">
@@ -48,6 +38,6 @@ const App = () => {
             </div>
         </div>
     );
-}
+};
 
 export default App;
