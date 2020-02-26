@@ -1,5 +1,10 @@
 export const Style = {
-    ul:{
+    ul: {
         listStyle: 'none'
+    },
+    chatRight: {
+        position: 'absolute',
+        right: '0px',
+        left: '50%'
     }
 };

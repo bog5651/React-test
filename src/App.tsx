@@ -11,6 +11,7 @@ import {getUser} from './Utils'
 import {UserContext} from './context';
 import UserStuff from "./Pages/UserStuff";
 import Chat from "./Pages/Chat";
+import ChatDispatcher from "./Pages/ChatDispatcher";
 
 const App = () => {
         const sortingData = [{
@@ -54,7 +55,7 @@ const App = () => {
                     <div className='App'>
                         <Switch>
                             <Route exact path='/chatUser' component={() => <Chat role="USER"/>}/>
-                            <Route exact path='/chatDispatcher' component={() => <Chat role="DISPATCHER"/>}/>
+                            <Route exact path='/chatDispatcher' component={() => <ChatDispatcher/>}/>
                             <Route exact path='/todos' render={() => <Todos/>}/>
                             <Route exact path='/404' render={() => <NotFound/>}/>
                             <Route exact path='/weather' render={() => <Weather/>}/>
